@@ -1,0 +1,373 @@
+:root{
+  /* Colors */
+  
+  /* Primary */
+  --Orange-500: hsl(25, 97%, 53%);
+
+  /* Neutral */
+  --White: hsl(0, 100%, 100%);
+  --Grey-500: hsl(217, 12%, 63%);
+  --Grey-900: hsl(213, 19%, 18%);
+  --Grey-950: hsl(216, 12%, 8%);
+
+  /* Typography */
+
+  --font-family-regular: 'Overpass regular';
+  --font-family-bold: 'Overpass bold';
+  --default-font-size: clamp(12px, 100%, 11px);
+
+  /* repeated px */
+
+  --10px: 10px;
+  --20px: 20px;
+  --15px: 15px;
+  --30px: 30px;
+
+  /* Linear Gradient */
+  --linear-gradient: linear-gradient(
+    90deg, 
+    #ff7a00,
+    #4a4a4a,
+    #9e9e9e,
+    #d9d9d9
+  );
+
+}
+
+@font-face {
+  font-family: 'Overpass regular';
+  src: url(Overpass-Regular.ttf)
+  format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Overpass bold';
+  src: url(Overpass-Bold.ttf)
+  format('truetype');
+  font-weight: 700;
+  font-display: swap;
+}
+
+/* Layout */
+
+*,
+*::before,
+*::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 100vh;
+  
+  font-family: var(--font-family-regular);
+  font-size: var(--default-font-size);
+
+  background-color: black;
+  color: white;
+}
+
+/* main section starts */
+
+#main{
+  display: flex;
+  flex-direction: column;
+  gap: var(--30px);
+  justify-content: center;
+  align-items: center
+}
+
+/* Container section */
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* main tag */
+
+main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: min(90%, 300px);
+  height: auto;
+  min-height: 320px;
+  border-radius: var(--20px);
+  
+  box-shadow: 5px 5px 100px var(--Grey-950);
+  background-image: linear-gradient(-45deg, var(--Grey-900), var(--Grey-950));
+}
+
+main >*{
+  margin: var(--20px);
+}
+
+/* Rating state */
+
+.rating-state{
+  display: flex;
+  flex-direction: column;
+}
+
+.rating-state > :nth-child(3){
+  align-self: center;
+}
+
+/*  article tag */
+
+article{
+  display: flex;
+  flex-direction: column;
+}
+
+article > *{
+    margin-bottom: var(--20px);
+}
+
+article img{
+    width: 35px;
+    padding: 10px;
+    border-radius: 20px;
+    margin-bottom: var(--30px);
+
+    background-color: var(--Grey-900);
+}
+
+article h1{
+  font-size: var(--20px);
+  font-family: var(--font-family-bold);
+}
+
+article p{
+  color: var(--Grey-500);
+}
+
+/* article tag ends */
+
+
+/* Number button */
+
+.number-btns ul{
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  list-style: none;
+  gap: var(--15px);
+
+  margin-bottom: var(--30px);
+}
+
+.number-btns ul> :nth-child(1) button{
+  padding: 1em 1.5em;
+}
+
+.number{
+   padding: 1em 1.3em;
+   border-radius: 2em;
+   border: none;
+
+   font-size: 12px;
+   font-family: var(--font-family-bold);
+
+   background-color: var(--Grey-900);
+   color: var(--Grey-500);
+
+   cursor: pointer;
+   transition: background-color 0.3s ease-in-out;
+}
+
+/* Rating Error */
+
+.error-div{
+  position: absolute;
+  top: -14px;
+}
+
+.rating-error{
+   position: relative;
+   width: min(90%, 200px);
+
+   padding: .7em 1.5em;
+   border-radius: 3em;
+   margin-bottom: var(--15px);
+   border: 1px solid var(--Orange-500);
+
+   background-color: var(--Grey-900);
+  
+}
+
+/* little triangle tip background*/
+
+.rating-error::before{
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 30px;
+
+  border-width: 10px;
+  border-style: solid;
+  border-color:  transparent transparent var(--Orange-500) transparent;
+
+}
+
+/* little triangle tip background */
+
+.rating-error::after{
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 32px;
+
+  border-width: 8px;
+  border-style: solid;
+  border-color:  transparent transparent var(--Grey-900) transparent;
+
+}
+
+/* rating error text */
+
+.rating-error p{
+    font-size: var(--default-font-size);
+    text-align: center;
+
+    color: var(--White);
+}
+
+/*  */
+
+/* Submit button */
+
+.submit-btn{
+  width: 100%;
+  padding: .8em;
+  border: none;
+  border-radius: var(--15px);
+
+
+  font-size: var(--default-font-size);
+  font-family: var(--font-family-bold);
+
+  color: var(--Grey-900);
+  background-color: var(--Orange-500);
+
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out
+              color 0.2s ease-in-out;
+}
+
+.submit-btn:hover,
+.number:hover{
+  background-color: var(--White);
+  color: var(--Grey-900);
+}
+
+/* rating state ends */
+
+/* Loading state starts*/
+
+.loading-state{
+  width: 90%;
+  
+
+  font-size: clamp(31px, 90%, 25px);
+  font-family: var(--font-family-bold);
+
+  color: transparent;
+  background-clip: text;
+  background-image: var(--linear-gradient);
+  background-size: 500%;
+  background-position: left;
+
+  transition: background-position 1s;
+  animation: pulse 2s infinite alternate;
+
+}
+
+@keyframes pulse {
+  0% {
+    background-position: left;
+  }
+  
+  100%{
+    background-position: right;
+  }
+}
+
+/* Loading state ends */
+
+/* Thank you state starts */
+
+.thankyou-state{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: auto;
+}
+
+.thankyou-state >*{
+  margin-bottom: var(--20px);
+}
+
+.thankyou-state img{
+  width: 100px;
+}
+
+.selection-p{
+  padding: 0.6em 0.9em;
+  border-radius: 1rem;
+  margin-bottom: var(--30px);
+
+  font-size: var(--default-font-size);
+  text-align: center;
+
+  color: var(--Orange-500);
+  background-color: var(--Grey-900);
+}
+
+.thankyou-state h2{
+  font-size: var(--20px);
+  font-family: var(--font-family-bold);
+}
+
+.thankyou-note{
+  margin-bottom: var(--10px);
+
+  text-align: center;
+  font-size: var(--default-font-size);
+  
+  color: var(--Grey-500);
+}
+
+/* Attribution style */
+
+.attribution { 
+  font-size: var(--default-font-size); 
+  text-align: center; 
+}
+.attribution a {
+   color: hsl(228, 45%, 44%); 
+  }
+
+/* Utility classes */
+
+.selected {
+  background-color: var(--Orange-500);
+  color: var(--Grey-900);
+}
+
+.hide{
+  display: none;
+}
