@@ -140,7 +140,7 @@ submitButtonElement.addEventListener( 'click', () => {
 
              mainElement.innerHTML = thankyouStateElement.innerHTML;
             
-        }, 3500);
+        }, 5000);
 
       }
 

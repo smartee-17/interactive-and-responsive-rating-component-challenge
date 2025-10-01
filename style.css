@@ -100,18 +100,28 @@ main{
   justify-content: center;
   align-items: center;
 
-  width: min(90%, 300px);
+  width: min(95%, 300px);
   height: auto;
   min-height: 320px;
   border-radius: var(--20px);
   
-  box-shadow: 5px 5px 100px var(--Grey-950);
+ 
   background-image: linear-gradient(-45deg, var(--Grey-900), var(--Grey-950));
 }
 
 main >*{
   margin: var(--20px);
 }
+
+/* Main div */
+
+.main-div{
+  box-shadow: inset 0 0 50px hsl(216, 12%, 8%, 0.117),
+              inset 0 0 0 9999px  hsla(216, 12%, 8%, 0.035)
+              inset 0 0 0 10000px  hsla(216, 12%, 8%, 0.035);
+              
+}
+
 
 /* Rating state */
 
@@ -244,7 +254,7 @@ article p{
     color: var(--White);
 }
 
-/*  */
+
 
 /* Submit button */
 
@@ -267,10 +277,10 @@ article p{
 }
 
 .submit-btn:hover,
-.number:hover{
-  background-color: var(--White);
-  color: var(--Grey-900);
-}
+  .number:hover{
+    background-color: var(--White);
+    color: var(--Grey-900);
+  }
 
 /* rating state ends */
 
@@ -278,7 +288,6 @@ article p{
 
 .loading-state{
   width: 90%;
-  
 
   font-size: clamp(31px, 90%, 25px);
   font-family: var(--font-family-bold);
@@ -358,7 +367,7 @@ article p{
   text-align: center; 
 }
 .attribution a {
-   color: hsl(228, 45%, 44%); 
+   color: hsl(228, 56%, 62%); 
   }
 
 /* Utility classes */
@@ -370,4 +379,16 @@ article p{
 
 .hide{
   display: none;
+}
+
+@media (max-width: 600px) {
+  .number:hover{
+    background-color: var(--Orange-500);
+  color: var(--Grey-900);
+  }
+
+  .submit-btn:hover{
+    background-color: var(--Orange-500);
+    color: var(--Grey-900);
+  }
 }
