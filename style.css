@@ -105,23 +105,13 @@ main{
   min-height: 320px;
   border-radius: var(--20px);
   
- 
+  box-shadow: 5px 5px 100px var(--Grey-950);
   background-image: linear-gradient(-45deg, var(--Grey-900), var(--Grey-950));
 }
 
 main >*{
   margin: var(--20px);
 }
-
-/* Main div */
-
-.main-div{
-  box-shadow: inset 0 0 50px hsl(216, 12%, 8%, 0.117),
-              inset 0 0 0 9999px  hsla(216, 12%, 8%, 0.035),
-              inset 0 0 0 10000px  hsla(216, 12%, 8%, 0.035);
-              
-}
-
 
 /* Rating state */
 
@@ -391,5 +381,4 @@ article p{
     background-color: var(--Orange-500);
     color: var(--Grey-900);
   }
-
 }
